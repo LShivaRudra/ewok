@@ -249,7 +249,7 @@ int main(int argc, char** argv){
 
 
     message_filters::Subscriber<sensor_msgs::Image> depth_image_sub_ ;
-    depth_image_sub_.subscribe(nh, "camera/depth/image_raw", 5);
+    depth_image_sub_.subscribe(nh, "/iris/camera/depth/image_raw", 5);
 
     tf::MessageFilter<sensor_msgs::Image> tf_filter_(depth_image_sub_, *listener, "world", 5);
     tf_filter_.registerCallback(depthImageCallback);
